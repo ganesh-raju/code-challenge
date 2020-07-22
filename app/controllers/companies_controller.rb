@@ -14,6 +14,8 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
+    
+    #nil.test!
     if @company.save
       redirect_to companies_path, notice: "Saved"
     else
@@ -30,7 +32,13 @@ class CompaniesController < ApplicationController
     else
       render :edit
     end
-  end  
+  end 
+
+  def destroy
+    @company.destroy
+    redirect_to companies_path, notice: "#{@company.name} sucessfully deleted!"
+  end
+
 
   private
 

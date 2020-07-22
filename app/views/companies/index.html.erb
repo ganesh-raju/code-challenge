@@ -8,6 +8,8 @@
       <% @companies.each do |company| %>
         <a href="<%= company_path(company) %>" class="list-group-item list-group-item-action">
           <%= company.name %>
+          <%= company.city %>
+          <%= company.state %>
         </a>
       <% end %>
     </ul>
